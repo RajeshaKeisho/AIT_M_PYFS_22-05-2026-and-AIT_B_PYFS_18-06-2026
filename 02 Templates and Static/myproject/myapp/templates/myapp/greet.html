@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greet Page</title>
+    <link rel="stylesheet" href="{% static 'myapp/css/styles.css' %}">
+</head>
+<body>
+    <div class='container'>
+        {% comment %} <img src="{% static 'myapp/images/nature.PNG' %} alt="nature"> {% endcomment %}
+        <img src="{% static 'myapp/images/nature.PNG' %}" alt="snnature">
+
+        <h2>Time: {{current_time}}</h2>
+        <p>Greeting: {{greeting}}</p>
+    </div>
+
+    
+
+    <script>
+                document.write('This is an inline JS code inside the template');
+    </script>
+    <script src="{% static 'myapp/js/script.js' %}"></script
+</body>
+</html>
