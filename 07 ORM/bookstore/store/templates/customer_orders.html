@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Orders</title>
+</head>
+<body>
+
+<h1>Customer Order Summary</h1>
+
+<table border="1" cellpadding="10">
+    <thead>
+        <tr>
+            <th>Customer</th>
+            <th>Email</th>
+            <th>Total Orders</th>
+            <th>Total Items</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for customer in customers %}
+        <tr>
+            <td>{{ customer.name }}</td>
+            <td>{{ customer.email }}</td>
+            <td>{{ customer.total_orders }}</td>
+            <td>{{ customer.total_items|default:0 }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No customers found.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<h2>Sales Dashboard</h2>
+
+<table border="1">
+<tr>
+    <th>Book</th>
+    <th>Total Sold</th>
+</tr>
+
+{% for book in books %}
+<tr>
+    <td>{{ book.title }}</td>
+    <td>{{ book.total_sold }}</td>
+</tr>
+{% endfor %}
+</table>
