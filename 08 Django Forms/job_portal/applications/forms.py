@@ -20,6 +20,13 @@ class JobApplicationForm(forms.ModelForm):
         }
 
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        # Remove default required validation
+        for field in self.fields.values():
+            field.required = False
+            
     def clean_phone(self):
         phone = self.cleaned_data.get('phone')
         if not phone.isdigit() or len(phone) < 10:
