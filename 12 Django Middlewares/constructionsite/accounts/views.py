@@ -1,0 +1,12 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+# Create your views here.
+
+def home(request):
+    return render(request, "home.html")
+
+def about(request):
+    return HttpResponse("<html><body><h1>This is about Page</h1><p>This is a paragraph contnet.</p></body></html>")
+
+def test_exception_view(request):
+    return HttpResponse("View Executed Successfully(If no ecxception occurs)")
